@@ -11,6 +11,7 @@
 #include <boost/filesystem.hpp>
 #include <boost/format.hpp>
 #include <boost/log/trivial.hpp>
+#include <boost/nowide/fstream.hpp>
 
 #include <curl/curl.h>
 
@@ -52,7 +53,7 @@ namespace Slic3r {
 						% error;
 			})
 			.on_complete([&](std::string body, unsigned /* http_status */) {
-				boost::filesystem::fstream file(tmp_path, std::ios::out | std::ios::binary | std::ios::trunc);
+				boost::nowide::fstream file(tmp_path, std::ios::out | std::ios::binary | std::ios::trunc);
 				file.write(body.c_str(), body.size());
 				file.close();
 				boost::filesystem::rename(tmp_path, target_path);

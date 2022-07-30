@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 
+#include <boost/filesystem/path.hpp>
 #include <boost/algorithm/string/trim_all.hpp>
 
 #include "libslic3r/Config.hpp"

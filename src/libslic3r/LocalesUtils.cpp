@@ -8,6 +8,7 @@
 
 #include <fast_float/fast_float.h>
 
+#include <boost/lexical_cast.hpp>
 
 namespace Slic3r {
 

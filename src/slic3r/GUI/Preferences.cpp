@@ -12,6 +12,7 @@
 #include "OG_CustomCtrl.hpp"
 #include "wxExtensions.hpp"
 
+#include <boost/algorithm/string/split.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
 

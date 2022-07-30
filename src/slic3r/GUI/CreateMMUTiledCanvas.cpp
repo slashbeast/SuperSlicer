@@ -35,8 +35,13 @@
 #include <wx/odcombo.h>
 #include <wx/textctrl.h>
 #include <wx/wrapsizer.h>
+#include <wx/rawbmp.h>
 #include "wxExtensions.hpp"
 
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/ini_parser.hpp>
+#include <boost/log/trivial.hpp>
+#include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
 #include <boost/nowide/fstream.hpp>
 

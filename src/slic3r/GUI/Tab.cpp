@@ -36,6 +36,8 @@
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/path.hpp>
 #include <boost/lexical_cast.hpp>
+#include <boost/nowide/fstream.hpp>
+#include <boost/log/trivial.hpp>
 
 #include "wxExtensions.hpp"
 #include "PresetComboBoxes.hpp"
@@ -1692,7 +1694,7 @@ std::vector<Slic3r::GUI::PageShp> Tab::create_pages(std::string setting_type_nam
 
     //read file
     //std::ifstream filestream(ui_layout_file.c_str());
-    boost::filesystem::ifstream filestream(ui_layout_file);
+    boost::nowide::ifstream filestream(ui_layout_file);
     std::string full_line;
     while (std::getline(filestream, full_line)) {
         //remove spaces

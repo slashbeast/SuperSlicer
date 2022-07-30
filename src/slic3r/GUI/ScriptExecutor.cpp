@@ -5,6 +5,14 @@
 #include "libslic3r/PresetBundle.hpp"
 #include "libslic3r/Print.hpp"
 
+#include <boost/log/trivial.hpp>
+#include <boost/lexical_cast.hpp>
+#include <boost/algorithm/string/trim_all.hpp>
+#include <boost/algorithm/string/erase.hpp>
+#include <boost/algorithm/string/split.hpp>
+#include <boost/filesystem.hpp>
+#include <boost/filesystem/string_file.hpp>
+
 #include <string>
 
 #include <angelscript/source/as_config.h>

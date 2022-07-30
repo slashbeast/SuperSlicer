@@ -38,6 +38,7 @@
 #include <boost/log/trivial.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <boost/nowide/fstream.hpp>
 
 // hack for process.hpp : it uses pid_t to set it as alias of int, but vc_x64_lib (wx thingy) as a '#define pid_t int'
 // and so boost/process has a line 'typedef int int'instead of 'typedef int pid_t' that makes it crash
@@ -321,7 +322,7 @@ bool FreeCADDialog::load_text_from_file(const boost::filesystem::path &path) {
         try {
             std::locale loc = boost::locale::generator()("en_US.UTF-8");
             // Open the stream to 'lock' the file.
-            boost::filesystem::ifstream in;
+            boost::nowide::ifstream in;
             in.imbue(loc);
             in.open(path);
             // Obtain the size of the file.
@@ -368,7 +369,7 @@ bool FreeCADDialog::write_text_in_file(const wxString &towrite, const boost::fil
         boost::filesystem::create_directories(file.parent_path());
         std::locale loc = boost::locale::generator()("en_US.UTF-8");
         // Open the stream to 'lock' the file.
-        boost::filesystem::ofstream out;
+        boost::nowide::ofstream out;
         out.imbue(loc);
         out.open(file);
         out << towrite;

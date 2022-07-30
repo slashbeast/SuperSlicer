@@ -1,5 +1,6 @@
 #include "libslic3r/libslic3r.h"
 #include "libslic3r/Utils.hpp"
+#include "libslic3r/I18N.hpp"
 #include "AppConfig.hpp"
 #include "Exception.hpp"
 #include "LocalesUtils.hpp"
